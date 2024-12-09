@@ -72,10 +72,14 @@ func getDataForDay(month: Int, day: Int) async throws {
   }
 }
 
-Task {
-  do {
-    try await getDataForDay(month: 2, day: 29)
-  } catch {
-    print(error)
-  }
+//Task {
+//  do {
+//    try await getDataForDay(month: 2, day: 29)
+//  } catch {
+//    print(error)
+//  }
+//}
+
+if let data = readSampleData(){
+    print(data.count)
 }
