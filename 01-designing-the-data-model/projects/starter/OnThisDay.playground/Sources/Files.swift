@@ -33,7 +33,16 @@
 import Foundation
 
 public func sampleFileURL() -> URL? {
-  return nil
+    let fileManager = FileManager.default
+    do{
+        let downloadFold = try
+        fileManager.url(for: .downloadsDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        let jsonFile = downloadFold.appendingPathComponent("sample.json")
+        return jsonFile
+    }catch{
+        print(error)
+        return nil
+    }
 }
 
 public func saveSampleData(json: String) {
